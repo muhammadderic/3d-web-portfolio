@@ -1,6 +1,10 @@
+import { Hero } from "./sections"
+
 function App() {
   return (
-    <h1 className="text-white">Hello Deric</h1>
+    <main className="max-w-7xl mx-auto relative">
+      <Hero />
+    </main>
   )
 }
 
