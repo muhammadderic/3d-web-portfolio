@@ -1,5 +1,6 @@
 import { 
   About, 
+  Clients, 
   Hero, 
   Navbar,
   Projects
@@ -18,6 +19,8 @@ function App() {
 
       {/* "Projects" need to add 3D contents */}
       <Projects />
+
+      <Clients />
     </main>
   )
 }
