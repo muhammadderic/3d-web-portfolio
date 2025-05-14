@@ -3,7 +3,8 @@ import {
   Clients, 
   Hero, 
   Navbar,
-  Projects
+  Projects,
+  WorkExperiences
 } from "./sections"
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
       <Projects />
 
       <Clients />
+
+      {/* "WorkExperiences" need to add 3D contents */}
+      <WorkExperiences />
     </main>
   )
 }
