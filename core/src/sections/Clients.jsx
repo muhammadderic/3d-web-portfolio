@@ -1,4 +1,4 @@
-import { clientReviews } from '../constants/clientReviews';
+import { clientReviews } from '../constants';
 
 export const Clients = () => {
   return (
