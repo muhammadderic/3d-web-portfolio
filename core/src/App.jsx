@@ -1,6 +1,7 @@
 import { 
   About, 
   Clients, 
+  Contact, 
   Hero, 
   Navbar,
   Projects,
@@ -25,6 +26,9 @@ function App() {
 
       {/* "WorkExperiences" need to add 3D contents */}
       <WorkExperiences />
+
+      {/* "Contact" need to use emailjs */}
+      <Contact />
     </main>
   )
 }
