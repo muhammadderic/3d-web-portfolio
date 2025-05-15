@@ -6,13 +6,14 @@ import { useMediaQuery } from "react-responsive";
 
 import { 
   Button, 
+  Cube,
   HackerRoom, 
-  HeroCamera, 
+  HeroCamera,
+  ReactLogo,
 } from "../components"
 import { calculateSizes } from "../constants";
 
 export const Hero = () => {
-  // Use media queries to determine screen size
   const isSmall = useMediaQuery({ maxWidth: 440 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
@@ -42,6 +43,13 @@ export const Hero = () => {
                 rotation={[0.1, -Math.PI, 0]} 
               />
             </HeroCamera>
+
+            <group>
+              <ReactLogo position={sizes.reactLogoPosition} />
+              <ReactLogo position={sizes.reactLogo2Position} />
+              <Cube position={sizes.cubePosition} />
+              <Cube position={sizes.cube2Position} />
+            </group>
 
             <ambientLight intensity={1} />
             <directionalLight position={[10, 10, 10]} intensity={0.5} />
