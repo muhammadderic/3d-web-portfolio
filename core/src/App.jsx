@@ -2,6 +2,7 @@ import {
   About, 
   Clients, 
   Contact, 
+  Footer, 
   Hero, 
   Navbar,
   Projects,
@@ -29,6 +30,8 @@ function App() {
 
       {/* "Contact" need to use emailjs */}
       <Contact />
+
+      <Footer />
     </main>
   )
 }
