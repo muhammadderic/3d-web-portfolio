@@ -1,4 +1,13 @@
-import { Button } from "../components"
+import { Suspense } from "react";
+import { Leva } from "leva";
+import { Canvas } from "@react-three/fiber";
+import { PerspectiveCamera } from "@react-three/drei";
+
+import { 
+  Button, 
+  HackerRoom, 
+  HeroCamera, 
+} from "../components"
 
 export const Hero = () => {
   return (
@@ -11,7 +20,24 @@ export const Hero = () => {
       </div>
 
       <div className="w-full h-full absolute inset-0">
+        <Canvas className="w-full h-full">
+          <Suspense fallback={null}>
+            {/* To hide controller */}
+            <Leva hidden />
+            <PerspectiveCamera makeDefault position={[0, 0, 30]} />
 
+            <HeroCamera>
+              <HackerRoom 
+                scale={0.065} 
+                position={[0.25, -5.5, 0]} 
+                rotation={[0.1, -Math.PI, 0]} 
+              />
+            </HeroCamera>
+
+            <ambientLight intensity={1} />
+            <directionalLight position={[10, 10, 10]} intensity={0.5} />
+          </Suspense>
+        </Canvas>
       </div>
 
       <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
