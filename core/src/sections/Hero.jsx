@@ -2,14 +2,23 @@ import { Suspense } from "react";
 import { Leva } from "leva";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
+import { useMediaQuery } from "react-responsive";
 
 import { 
   Button, 
   HackerRoom, 
   HeroCamera, 
 } from "../components"
+import { calculateSizes } from "../constants";
 
 export const Hero = () => {
+  // Use media queries to determine screen size
+  const isSmall = useMediaQuery({ maxWidth: 440 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+
+  const sizes = calculateSizes(isSmall, isMobile, isTablet);
+
   return (
     <section className="min-h-screen w-full flex flex-col relative" id="home">
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
@@ -28,8 +37,8 @@ export const Hero = () => {
 
             <HeroCamera>
               <HackerRoom 
-                scale={0.065} 
-                position={[0.25, -5.5, 0]} 
+                scale={sizes.deskScale} 
+                position={sizes.deskPosition} 
                 rotation={[0.1, -Math.PI, 0]} 
               />
             </HeroCamera>

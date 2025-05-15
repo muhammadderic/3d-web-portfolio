@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { damp3, dampE } from 'maath/easing';
 
-export const HeroCamera = ({ children, isMobile = false }) => {
+export const HeroCamera = ({ children, isMobile }) => {
   const group = useRef();
 
   useFrame((state, delta) => {
